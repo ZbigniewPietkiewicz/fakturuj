@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Category {
+  id: Float!
+  name: String!
+  products: [Product!]
+}
+
+type Product {
+  id: Float!
+  name: String!
+  price: Float!
+  currencyCode: String!
+  amount: Float!
+  productionDate: String!
+  category: Category!
+  description: String!
+}
+
+type Query {
+  getAllProducts: [Product!]!
+  getOneProductById(id: Float!): Product!
+  getAllCategories: [Category!]!
+  getOneCategoryById(id: Float!): Category!
+}
+
+type Mutation {
+  createProduct(createProductDTO: CreateProductDTO!): Product!
+  updateProduct(updateProductDTO: UpdateProductDTO!): Product!
+  deleteProduct(id: Float!): Boolean!
+  createCategory(createCategoryDTO: CreateCategoryDTO!): Category!
+  updateCategory(updateCategoryDTO: UpdateCategoryDTO!): Category!
+}
+
+input CreateProductDTO {
+  name: String!
+  price: Float!
+  amount: Float!
+  currencyCode: String! = "PLN"
+  productionDate: String!
+  description: String
+  categoryId: Float!
+}
+
+input UpdateProductDTO {
+  id: Float!
+  name: String
+  price: Float
+  amount: Float
+  currencyCode: String
+  productionDate: String
+  description: String
+  categoryId: Float
+}
+
+input CreateCategoryDTO {
+  name: String!
+}
+
+input UpdateCategoryDTO {
+  id: Float!
+  name: String!
+}
