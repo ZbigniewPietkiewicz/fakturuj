@@ -12,7 +12,7 @@
 -when you see that ```LOG [NestApplication] Nest application successfully started +2ms```, backend is ready to go
 
 # using backend
--open localhost:3000/graphql
+-open http://localhost:3000/graphql
 -you now can fill database as needed with data following schema
 -database is in memory so if you will drop application, data will be lost
 
