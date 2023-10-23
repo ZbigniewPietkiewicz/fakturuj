@@ -4,37 +4,17 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: "http://localhost:3000/graphql",
+  documents: "./src/features/**/**/*.{ts,tsx}",
   generates: {
-    "src/app/graphql/graphql-schema.json": {
-      plugins: ["introspection"]
-    },
-    "src/__generated__/":
-    {
+    "src/generated/": {
       preset: "client",
-      presetConfig:{
-        gqlTagName: "gql"
-      }
-      // plugins: ["typescript", "typescript-operations"],
-      // config: {
-      //   declarationKind: {
-      //     union: "type",
-      //     type: "interface",
-      //     input: "interface",
-      //     scalar: "interface",
-      //     arguments: "interface",
-      //     interface: "interface"
-      //   },
-      //   enumAsTypes: true,
-      //   includeDirectives: true,
-      //   commentDescriptions: true,
-      //   avoidOptionals: {
-      //     field: false,
-      //     object: false,
-      //     inputValue: false,
-      //   }
-      // }
+      plugins: []
+    },
+    "src/generated/types.ts": {
+      plugins: ["typescript", "typescript-operations", "typescript-react-apollo"],
     }
-  }
+  },
+  verbose: true
 };
 
 export default config;

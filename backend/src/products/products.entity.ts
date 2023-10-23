@@ -64,10 +64,9 @@ export class Product {
   @Column()
   categoryId: number;
 
-  @Column({ length: 2000, nullable: true })
-  @Length(0, 2000)
+  @Column()
   @Field()
-  description?: string;
+  description: string;
 
   @BeforeInsert()
   @BeforeUpdate()

@@ -17,8 +17,8 @@ export class CreateProductDTO {
   @Field()
   productionDate: string;
 
-  @Field({ nullable: true })
-  description?: string;
+  @Field()
+  description: string;
 
   @Field()
   categoryId: number;

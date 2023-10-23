@@ -36,7 +36,7 @@ export class CategoriesResolver {
   }
 
   @Mutation(() => Boolean)
-  async deleteProduct(@Args('id') id: number): Promise<boolean> {
+  async deleteCategory(@Args('id') id: number): Promise<boolean> {
     return await this.categoryService.delete(id);
   }
 }

@@ -55,6 +55,7 @@ export class ProductsService {
   }
 
   async delete(productId: number): Promise<boolean> {
+    console.log(productId);
     await this.productRepository.delete(productId).catch((errors) => {
       throw new Error(errors[0].toString());
     });
