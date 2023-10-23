@@ -19,4 +19,11 @@
 ## INSTALL & RUN FRONTEND
 
 # install
-ATM frontend is broken and unfinished.
+-navigate to frontend folder
+-open your cli
+-type in npm install and press enter
+-when all node modules are installed, run npm run codegen (requires backend to be up and running)
+-when this too is finished, you can start frontend with npm run start command
+
+# using frontend
+Frontend capabilities are limited: Create and update are not possible in this version. Displaying list, displaying details and deleting products is possible. 
